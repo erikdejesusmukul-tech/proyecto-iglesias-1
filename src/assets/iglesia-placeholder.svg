@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Templo colonial yucateco</title>
+  <desc id="desc">Ilustración de referencia de una iglesia histórica sobre papel color pergamino.</desc>
+  <rect width="800" height="1000" fill="#d8c9ac"/>
+  <path d="M0 700 800 660v340H0z" fill="#b39b78"/>
+  <path d="M112 760V410h91V270h106v490zm378 0V270h106v140h91v350z" fill="#806d55"/>
+  <path d="M260 760V478l140-118 140 118v282z" fill="#9b8567"/>
+  <path d="m245 482 155-133 155 133" fill="none" stroke="#5f503f" stroke-width="20" stroke-linejoin="round"/>
+  <path d="M342 760V615a58 58 0 0 1 116 0v145" fill="#403b32"/>
+  <path d="M142 408h32v-96h42v96h58v25H142zm440 0h58v-96h42v96h32v25H582z" fill="#c7b594"/>
+  <path d="M390 348v-75h20v75m-34-52h48" stroke="#d9caaa" stroke-width="10"/>
+  <g fill="#c7b594"><rect x="143" y="480" width="30" height="62" rx="15"/><rect x="143" y="578" width="30" height="62" rx="15"/><rect x="627" y="480" width="30" height="62" rx="15"/><rect x="627" y="578" width="30" height="62" rx="15"/></g>
+  <path d="M0 125h800" stroke="#b49a74" stroke-width="2" opacity=".6"/>
+  <text x="58" y="87" fill="#554938" font-family="Georgia,serif" font-size="22" letter-spacing="5">PATRIMONIO DE MÉRIDA</text>
+  <text x="58" y="930" fill="#473d30" font-family="Georgia,serif" font-size="23" letter-spacing="3">ILUSTRACIÓN DE REFERENCIA</text>
+</svg>
