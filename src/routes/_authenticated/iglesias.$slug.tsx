@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { getChurch } from "@/models/churches";
+import placeholder from "@/assets/iglesia-placeholder.svg";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/_authenticated/iglesias/$slug")({
@@ -76,6 +77,7 @@ function ChurchPage() {
           alt={church.name}
           width={1024}
           height={1280}
+          onError={(event) => { event.currentTarget.onerror = null; event.currentTarget.src = placeholder; }}
           className="absolute inset-0 h-full w-full object-cover"
           style={{ transform: `scale(${1 + y / 2500}) translateY(${y * 0.3}px)` }}
         />

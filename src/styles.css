@@ -168,11 +168,21 @@ body { font-family: var(--font-sans); background: var(--ink); color: var(--ivory
 @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
 
 /* Two continuous, opposing lanes give the temple cards a serpentine rhythm. */
-.serpent-window { overflow: hidden; }
+.serpent-window { overflow: visible; }
+.serpent-row { isolation: isolate; }
+.serpent-viewport { overflow: hidden; }
+.serpent-row-active .serpent-viewport { overflow-x: auto; scrollbar-width: none; }
+.serpent-row-active .serpent-viewport::-webkit-scrollbar { display: none; }
 .serpent-track { display: flex; width: max-content; animation: serpent-forward 70s linear infinite; }
 .serpent-track-reverse { animation-name: serpent-reverse; animation-duration: 76s; }
 .serpent-group { display: flex; flex: none; align-items: center; gap: 1.25rem; padding-right: 1.25rem; }
 .serpent-track:hover, .serpent-track:focus-within { animation-play-state: paused; }
+.serpent-track-paused { animation-play-state: paused; }
+.serpent-controls { position: absolute; z-index: 20; top: 50%; left: 0.75rem; right: 0.75rem; display: flex; justify-content: space-between; pointer-events: none; opacity: 0; transform: translateY(-50%); transition: opacity 180ms ease; }
+.serpent-row-active .serpent-controls, .serpent-row:focus-within .serpent-controls { opacity: 1; }
+@media (hover: none) { .serpent-controls { opacity: 1; } }
+.serpent-control-button { display: grid; width: 2.5rem; height: 2.5rem; place-items: center; pointer-events: auto; border: 1px solid color-mix(in oklch, var(--ink) 20%, transparent); border-radius: 9999px; background: color-mix(in oklch, var(--ivory) 94%, transparent); color: var(--ink); box-shadow: 0 4px 14px color-mix(in oklch, var(--ink) 18%, transparent); transition: background 160ms ease, color 160ms ease, transform 160ms ease; }
+.serpent-control-button:hover { transform: scale(1.08); background: var(--rose-old); color: var(--ivory); }
 @keyframes serpent-forward { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes serpent-reverse { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 @media (prefers-reduced-motion: reduce) { .serpent-track { animation: none; } }

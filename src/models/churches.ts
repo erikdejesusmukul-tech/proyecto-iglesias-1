@@ -6,6 +6,8 @@ import sanJuan from "@/assets/iglesia-san-juan.jpg";
 import santaIsabel from "@/assets/iglesia-santa-isabel.jpg";
 import sanCristobal from "@/assets/iglesia-san-cristobal.jpg";
 import placeholder from "@/assets/iglesia-placeholder.svg";
+import { additionalMeridaChurches } from "@/models/meridaChurches";
+import { additionalYucatanChurches } from "@/models/yucatanChurches";
 
 export interface Church {
   slug: string;
@@ -42,8 +44,9 @@ export const churches: Church[] = [
       { name: "Capilla de San José", note: "Dedicada al patrono de las familias trabajadoras." },
     ],
     horarios: [
-      { day: "Lunes a sábado", hours: "Consultar con la parroquia; los horarios pueden cambiar" },
-      { day: "Domingo", hours: "Consultar con la parroquia; los horarios pueden cambiar" },
+      { day: "Lunes a viernes", hours: "07:00, 08:15, 11:15, 17:15 y 18:30 h" },
+      { day: "Sábado", hours: "07:00, 08:15, 11:15, 17:15 y 18:30 h" },
+      { day: "Domingo", hours: "07:00, 08:15, 10:00, 11:00, 12:00, 17:00 y 18:30 h; misa en inglés a las 09:00 h en la Capilla del Divino Maestro" },
     ],
     contacto: {
       address: "Calle 60 s/n, Plaza Grande, Centro, Mérida, Yuc.",
@@ -79,8 +82,8 @@ export const churches: Church[] = [
       { name: "Capilla del Tránsito", note: "Conserva la devoción original del convento franciscano." },
     ],
     horarios: [
-      { day: "Lunes a sábado", hours: "Consultar con la parroquia; los horarios pueden cambiar" },
-      { day: "Domingo", hours: "Consultar con la parroquia; los horarios pueden cambiar" },
+      { day: "Lunes a sábado", hours: "07:30 y 19:00 h" },
+      { day: "Domingo", hours: "09:00, 11:00, 12:00, 13:00 y 19:00 h" },
     ],
     contacto: {
       address: "Calle 50-A x 59, Barrio de La Mejorada, Mérida, Yuc.",
@@ -116,8 +119,9 @@ export const churches: Church[] = [
       { name: "Capilla del Perdón", note: "Espacio de confesión y reconciliación." },
     ],
     horarios: [
-      { day: "Lunes a sábado", hours: "Consultar con la parroquia; los horarios pueden cambiar" },
-      { day: "Domingo", hours: "Consultar con la parroquia; los horarios pueden cambiar" },
+      { day: "Lunes a miércoles, viernes y sábado", hours: "07:00 y 19:00 h" },
+      { day: "Jueves", hours: "07:00 y 18:15 h" },
+      { day: "Domingo", hours: "07:00, 08:00 y 18:00 h" },
     ],
     contacto: {
       address: "Calle 59 x 72, Barrio de Santiago, Mérida, Yuc.",
@@ -142,7 +146,7 @@ export const churches: Church[] = [
     short: "Santa Ana",
     tagline: "La capilla amarilla del barrio alegre.",
     image: santaAna,
-    founded: "1733",
+    founded: "1729–1733",
     mapQuery: "Parque de Santa Ana, Mérida, Yucatán",
     history: [
       "La iglesia de Santa Ana se construyó hacia 1730 por iniciativa del gobernador Antonio de Figueroa y Silva. Situada al norte del centro, articuló el barrio que creció alrededor de su plaza y llegó a ser una de las parroquias históricas de Mérida.",
@@ -152,8 +156,9 @@ export const churches: Church[] = [
       { name: "Capilla de Santa Ana", note: "Dedicada a la abuela de Jesús, patrona de las madres." },
     ],
     horarios: [
-      { day: "Lunes a sábado", hours: "Consultar con la parroquia; los horarios pueden cambiar" },
-      { day: "Domingo", hours: "Consultar con la parroquia; los horarios pueden cambiar" },
+      { day: "Martes a jueves", hours: "19:30 h" },
+      { day: "Sábado", hours: "20:00 h" },
+      { day: "Domingo", hours: "10:00, 12:00, 18:00 y 19:00 h" },
     ],
     contacto: {
       address: "Calle 47 x 60, Parque de Santa Ana, Mérida, Yuc.",
@@ -178,19 +183,20 @@ export const churches: Church[] = [
     short: "San Juan",
     tagline: "Junto al parque de la fuente y los laureles.",
     image: sanJuan,
-    founded: "1569",
+    founded: "1729",
     mapQuery: "Iglesia de San Juan Bautista, Mérida, Yucatán",
     history: [
-      "La iglesia de San Juan Bautista pertenece a la primera etapa de expansión de Mérida y dio nombre a uno de sus barrios históricos del sur. La plaza y el templo quedaron vinculados a los caminos que comunicaban el centro con los asentamientos y haciendas de los alrededores.",
-      "Su conjunto —de mampostería, nave sencilla y campanario visible desde el parque— muestra las sucesivas intervenciones que adaptaron los templos coloniales a las necesidades de cada época. El cercano arco de San Juan recuerda el antiguo acceso urbano y forma, junto con la iglesia, un paisaje patrimonial que aún estructura la vida del barrio.",
+      "La actual iglesia parroquial de San Juan Bautista se levantó sobre una ermita anterior. El registro divulgativo del INAH señala que la construcción de la iglesia actual comenzó en 1689; en 1693 inició la edificación de la nueva parroquia y el templo fue consagrado el 25 de julio de 1729.",
+      "El inmueble se describe como una construcción sólida y sobria, con amplias naves. Su relación con la plaza del barrio y con el cercano Arco de San Juan permite entender cómo los templos y espacios públicos articulaban las entradas y los barrios de la Mérida colonial.",
     ],
     capillas: [
       { name: "Capilla del Bautista", note: "Altar dedicado a San Juan, patrono del barrio." },
       { name: "Capilla de Guadalupe", note: "Devoción guadalupana del barrio." },
     ],
     horarios: [
-      { day: "Lunes a sábado", hours: "Consultar con la parroquia; los horarios pueden cambiar" },
-      { day: "Domingo", hours: "Consultar con la parroquia; los horarios pueden cambiar" },
+      { day: "Lunes a viernes", hours: "08:00 y 19:00 h" },
+      { day: "Sábado", hours: "08:00 y 19:00 h" },
+      { day: "Domingo", hours: "08:00, 09:15, 18:00 y 20:00 h" },
     ],
     contacto: {
       address: "Calle 62 x 69, Parque de San Juan, Mérida, Yuc.",
@@ -225,8 +231,8 @@ export const churches: Church[] = [
       { name: "Capilla de Santa Isabel", note: "Dedicada a Santa Isabel de Hungría, madre de los pobres." },
     ],
     horarios: [
-      { day: "Lunes a sábado", hours: "Consultar con la parroquia; los horarios pueden cambiar" },
-      { day: "Domingo", hours: "Consultar con la parroquia; los horarios pueden cambiar" },
+      { day: "Jueves y sábado", hours: "19:00 h" },
+      { day: "Domingo", hours: "09:00, 10:30, 18:00 y 19:00 h" },
     ],
     contacto: {
       address: "Calle 66 x 79, Barrio de San Sebastián, Mérida, Yuc.",
@@ -247,7 +253,7 @@ export const churches: Church[] = [
   },
   {
     slug: "san-cristobal",
-    name: "Iglesia de San Cristóbal",
+    name: "Parroquia de Nuestra Señora de Guadalupe (San Cristóbal)",
     short: "San Cristóbal",
     tagline: "El templo del último barrio de la ciudad.",
     image: sanCristobal,
@@ -261,8 +267,7 @@ export const churches: Church[] = [
       { name: "Capilla de San Cristóbal", note: "Dedicada al santo patrono de los viajeros." },
     ],
     horarios: [
-      { day: "Lunes a sábado", hours: "Consultar con la parroquia; los horarios pueden cambiar" },
-      { day: "Domingo", hours: "Consultar con la parroquia; los horarios pueden cambiar" },
+      { day: "Festividad guadalupana · 12 de diciembre", hours: "En 2024 se anunciaron misas a las 18:00 y 20:00 h." },
     ],
     contacto: {
       address: "Calle 50 x 69, Barrio de San Cristóbal, Mérida, Yuc.",
@@ -286,7 +291,7 @@ export const churches: Church[] = [
     name: "Templo de la Tercera Orden",
     short: "Tercera Orden",
     tagline: "Barroco franciscano junto al corazón de la ciudad.",
-    image: placeholder,
+    image: "/images/iglesias/templo-tercera-orden/fachada.jpg",
     founded: "siglo XVII",
     mapQuery: "Templo de la Tercera Orden, Mérida, Yucatán",
     history: [
@@ -294,7 +299,7 @@ export const churches: Church[] = [
       "La fachada de piedra, el trabajo ornamental de la portada y los retablos interiores reflejan el desarrollo del barroco yucateco. Su emplazamiento próximo a la Plaza Grande sitúa al templo en una zona donde la arquitectura religiosa, las casas coloniales y los edificios civiles narran juntas la historia del centro histórico.",
     ],
     capillas: [{ name: "Nave y altares laterales", note: "Espacios de devoción integrados al conjunto histórico; la disposición puede variar según el uso litúrgico." }],
-    horarios: [{ day: "Visitas y celebraciones", hours: "Consultar directamente con el templo" }],
+    horarios: [{ day: "Horarios publicados", hours: "El directorio consultado asocia horarios a la rectoría El Jesús, pero no permite confirmar que correspondan a este inmueble histórico." }],
     contacto: { address: "Calle 60 x 59, Centro, Mérida, Yucatán.", phone: "No publicado", email: "No publicado" },
     objetos: [{ name: "Portada barroca", note: "Cantería labrada y composición ornamental propia de la arquitectura religiosa virreinal." }, { name: "Retablos e imaginería", note: "Elementos devocionales que documentan las distintas etapas de uso y ornamentación del templo." }],
     eventos: [{ name: "Celebraciones litúrgicas", note: "La programación depende del calendario parroquial." }, { name: "Visitas patrimoniales", note: "Se recomienda confirmar disponibilidad y acceso antes de acudir." }],
@@ -305,7 +310,7 @@ export const churches: Church[] = [
     name: "Iglesia de Santa Lucía",
     short: "Santa Lucía",
     tagline: "Una capilla del siglo XVI en un barrio de música y memoria.",
-    image: placeholder,
+    image: "/images/iglesias/santa-lucia/fachada.jpg",
     founded: "siglo XVI",
     mapQuery: "Iglesia de Santa Lucía, Mérida, Yucatán",
     history: [
@@ -313,7 +318,7 @@ export const churches: Church[] = [
       "La capilla fue remodelada en diferentes periodos y conserva una escala recogida, vinculada a la plaza que hoy lleva el mismo nombre. El templo y su entorno reúnen patrimonio arquitectónico, devoción a Santa Lucía y una intensa vida cultural, reconocida por la trova y las reuniones comunitarias.",
     ],
     capillas: [{ name: "Altar de Santa Lucía", note: "Espacio dedicado a la mártir y patrona del barrio." }],
-    horarios: [{ day: "Visitas y celebraciones", hours: "Consultar directamente con la parroquia" }],
+    horarios: [{ day: "Lunes", hours: "07:00 y 18:00 h" }, { day: "Martes y miércoles", hours: "07:00 y 19:00 h" }, { day: "Jueves", hours: "07:00 h" }, { day: "Domingo", hours: "18:00 h" }],
     contacto: { address: "Calle 60 x 55, Parque de Santa Lucía, Centro, Mérida, Yucatán.", phone: "No publicado", email: "No publicado" },
     objetos: [{ name: "Portada y nave histórica", note: "La construcción conserva la escala de una capilla barrial de origen colonial, modificada a través de los siglos." }, { name: "Plaza de Santa Lucía", note: "El espacio público asociado al templo es parte esencial del patrimonio cultural del barrio." }],
     eventos: [{ name: "Fiesta de Santa Lucía", note: "Celebración patronal sujeta al calendario de la comunidad." }, { name: "Actividades culturales del barrio", note: "La plaza mantiene una programación cultural que convive con el uso religioso del entorno." }],
@@ -324,7 +329,7 @@ export const churches: Church[] = [
     name: "Templo de San Juan de Dios",
     short: "San Juan de Dios",
     tagline: "Memoria de la primera asistencia hospitalaria de Mérida.",
-    image: placeholder,
+    image: "/images/iglesias/san-juan-de-dios/fachada.jpg",
     founded: "siglo XVI",
     mapQuery: "Templo de San Juan de Dios, Mérida, Yucatán",
     history: [
@@ -332,7 +337,7 @@ export const churches: Church[] = [
       "Su arquitectura conserva elementos de distintas etapas y una portada con detalles de piedra asociados a la advocación original. El edificio permite acercarse a una dimensión menos visible de la ciudad colonial: la relación entre culto, cuidado de enfermos y organización de los servicios comunitarios.",
     ],
     capillas: [{ name: "Antigua capilla hospitalaria", note: "Vinculada históricamente al conjunto asistencial de Nuestra Señora del Rosario." }],
-    horarios: [{ day: "Acceso", hours: "Consultar disponibilidad; el acceso puede ser limitado" }],
+    horarios: [{ day: "Situación del inmueble", hours: "Templo histórico bajo resguardo patrimonial; no se publica un horario regular de culto en el directorio parroquial consultado." }],
     contacto: { address: "Calle 58 x 61, Centro, Mérida, Yucatán.", phone: "No publicado", email: "No publicado" },
     objetos: [{ name: "Portada de Nuestra Señora del Rosario", note: "La ornamentación pétrea conserva la memoria de la advocación antigua del templo." }, { name: "Conjunto hospitalario histórico", note: "El lugar se relacionó con uno de los hospitales más tempranos de la ciudad." }],
     eventos: [{ name: "Visitas patrimoniales", note: "Confirmar de antemano el acceso y las condiciones de visita." }, { name: "Memoria del hospital", note: "Un sitio clave para conocer la historia de la asistencia y la salud en Mérida." }],
@@ -343,7 +348,7 @@ export const churches: Church[] = [
     name: "Parroquia de San Sebastián",
     short: "San Sebastián",
     tagline: "La iglesia de un barrio de tradición popular.",
-    image: placeholder,
+    image: "/images/iglesias/san-sebastian/fachada.jpg",
     founded: "siglo XVIII",
     mapQuery: "Parroquia de San Sebastián, Mérida, Yucatán",
     history: [
@@ -351,7 +356,7 @@ export const churches: Church[] = [
       "El templo adquirió rango parroquial en 1889, reflejo del crecimiento de la comunidad y de su importancia en la vida urbana. Su arquitectura de mampostería y la plaza contigua forman el escenario de celebraciones populares, entre ellas las dedicadas a la Virgen de la Asunción, que mantienen la continuidad de las tradiciones del barrio.",
     ],
     capillas: [{ name: "Altar de San Sebastián", note: "Dedicado al santo que da nombre al barrio y a la parroquia." }],
-    horarios: [{ day: "Visitas y celebraciones", hours: "Consultar directamente con la parroquia" }],
+    horarios: [{ day: "Lunes a sábado", hours: "07:00 y 19:00 h" }, { day: "Domingo", hours: "10:00, 18:00 y 19:30 h" }],
     contacto: { address: "Calle 72 x 75, Barrio de San Sebastián, Mérida, Yucatán.", phone: "No publicado", email: "No publicado" },
     objetos: [{ name: "Fachada parroquial", note: "Mampostería y composición de escala barrial, con intervenciones de distintas épocas." }, { name: "Plaza de San Sebastián", note: "Espacio de encuentro asociado a las fiestas tradicionales de la comunidad." }],
     eventos: [{ name: "Fiesta patronal", note: "Celebración en honor a San Sebastián según el calendario litúrgico." }, { name: "Fiesta de la Asunción", note: "Devoción popular destacada en la vida anual del barrio." }],
@@ -362,7 +367,7 @@ export const churches: Church[] = [
     name: "Parroquia de Nuestra Señora del Perpetuo Socorro de Itzimná",
     short: "Itzimná",
     tagline: "Una parroquia histórica entre jardines y memoria maya.",
-    image: placeholder,
+    image: "/images/iglesias/itzimna-perpetuo-socorro/fachada.jpg",
     founded: "1710",
     mapQuery: "Parroquia de Nuestra Señora del Perpetuo Socorro, Itzimná, Mérida, Yucatán",
     history: [
@@ -370,12 +375,13 @@ export const churches: Church[] = [
       "El edificio estuvo dedicado a San Miguel Arcángel hasta 1944, cuando la comunidad adoptó la advocación de Nuestra Señora del Perpetuo Socorro. Su sobria fachada franciscana, la espadaña de tres vanos y la antigua pila bautismal evocan varias etapas de la historia local, hoy enmarcadas por la plaza arbolada de Itzimná.",
     ],
     capillas: [{ name: "Santuario de Nuestra Señora del Perpetuo Socorro", note: "Centro de la devoción mariana que identifica hoy a la parroquia." }],
-    horarios: [{ day: "Visitas y celebraciones", hours: "Consultar directamente con la parroquia" }],
+    horarios: [{ day: "Lunes a viernes", hours: "07:00, 09:00 y 18:30 h" }, { day: "Sábado", hours: "07:00, 09:00, 17:00 y 18:00 h" }, { day: "Domingo", hours: "07:00, 09:00, 10:00, 12:00, 18:00, 19:00 y 20:00 h" }],
     contacto: { address: "Calle 20 x 19 y 29, Itzimná, Mérida, Yucatán.", phone: "No publicado", email: "No publicado" },
     objetos: [{ name: "Pila bautismal histórica", note: "Se conserva como vestigio de la primera capilla del siglo XVI." }, { name: "Espadaña de tres vanos", note: "Remate característico de la sencilla fachada de tradición franciscana." }],
     eventos: [{ name: "Fiesta de Nuestra Señora del Perpetuo Socorro", note: "Celebración mariana de la comunidad parroquial." }, { name: "Fiestas de Itzimná", note: "Las celebraciones del barrio conservan su vínculo con la plaza y el templo." }],
     libros: [{ title: "Itzimná: templo y barrio", note: "Referencia histórica · consultar archivo o guía local" }],
   },
+  ...additionalMeridaChurches,
   {
     slug: "san-antonio-de-padua-izamal",
     name: "Ex Convento y Parroquia de San Antonio de Padua de Izamal",
@@ -566,6 +572,7 @@ export const churches: Church[] = [
     eventos: [{ name: "Celebraciones de San Francisco", note: "La agenda litúrgica se confirma directamente con la parroquia." }, { name: "Ruta de los Conventos", note: "El templo se integra al recorrido patrimonial por las localidades del sur." }],
     libros: [{ title: "San Francisco de Asís en Oxkutzcab", note: "Referencia histórica · consultar Ayuntamiento e INAH" }],
   },
+  ...additionalYucatanChurches,
 ];
 
 export const getChurch = (slug: string) => churches.find((c) => c.slug === slug);

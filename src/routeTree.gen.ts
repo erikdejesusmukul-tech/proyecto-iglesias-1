@@ -12,6 +12,16 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as DashboardRouteRouteImport } from './routes/dashboard/route'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as RegistroIglesiaRouteImport } from './routes/registro-iglesia'
+import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
+import { Route as DashboardAsistenciaRouteImport } from './routes/dashboard/asistencia'
+import { Route as DashboardConfiguracionRouteImport } from './routes/dashboard/configuracion'
+import { Route as DashboardEventosRouteImport } from './routes/dashboard/eventos'
+import { Route as DashboardFinanzasRouteImport } from './routes/dashboard/finanzas'
+import { Route as DashboardMiembrosRouteImport } from './routes/dashboard/miembros'
+import { Route as DashboardMinisteriosRouteImport } from './routes/dashboard/ministerios'
 import { Route as AuthenticatedIglesiasSlugRouteImport } from './routes/_authenticated/iglesias.$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -28,6 +38,56 @@ const AuthRoute = AuthRouteImport.update({
   path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DashboardRouteRoute = DashboardRouteRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegistroIglesiaRoute = RegistroIglesiaRouteImport.update({
+  id: '/registro-iglesia',
+  path: '/registro-iglesia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardIndexRoute = DashboardIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
+const DashboardAsistenciaRoute = DashboardAsistenciaRouteImport.update({
+  id: '/asistencia',
+  path: '/asistencia',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
+const DashboardConfiguracionRoute = DashboardConfiguracionRouteImport.update({
+  id: '/configuracion',
+  path: '/configuracion',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
+const DashboardEventosRoute = DashboardEventosRouteImport.update({
+  id: '/eventos',
+  path: '/eventos',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
+const DashboardFinanzasRoute = DashboardFinanzasRouteImport.update({
+  id: '/finanzas',
+  path: '/finanzas',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
+const DashboardMiembrosRoute = DashboardMiembrosRouteImport.update({
+  id: '/miembros',
+  path: '/miembros',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
+const DashboardMinisteriosRoute = DashboardMinisteriosRouteImport.update({
+  id: '/ministerios',
+  path: '/ministerios',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
 const AuthenticatedIglesiasSlugRoute =
   AuthenticatedIglesiasSlugRouteImport.update({
     id: '/iglesias/$slug',
@@ -37,38 +97,105 @@ const AuthenticatedIglesiasSlugRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/dashboard': typeof DashboardRouteRouteWithChildren
   '/auth': typeof AuthRoute
+  '/login': typeof LoginRoute
+  '/registro-iglesia': typeof RegistroIglesiaRoute
+  '/dashboard/asistencia': typeof DashboardAsistenciaRoute
+  '/dashboard/configuracion': typeof DashboardConfiguracionRoute
+  '/dashboard/eventos': typeof DashboardEventosRoute
+  '/dashboard/finanzas': typeof DashboardFinanzasRoute
+  '/dashboard/miembros': typeof DashboardMiembrosRoute
+  '/dashboard/ministerios': typeof DashboardMinisteriosRoute
+  '/dashboard/': typeof DashboardIndexRoute
   '/iglesias/$slug': typeof AuthenticatedIglesiasSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/login': typeof LoginRoute
+  '/registro-iglesia': typeof RegistroIglesiaRoute
+  '/dashboard/asistencia': typeof DashboardAsistenciaRoute
+  '/dashboard/configuracion': typeof DashboardConfiguracionRoute
+  '/dashboard/eventos': typeof DashboardEventosRoute
+  '/dashboard/finanzas': typeof DashboardFinanzasRoute
+  '/dashboard/miembros': typeof DashboardMiembrosRoute
+  '/dashboard/ministerios': typeof DashboardMinisteriosRoute
+  '/dashboard': typeof DashboardIndexRoute
   '/iglesias/$slug': typeof AuthenticatedIglesiasSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/dashboard': typeof DashboardRouteRouteWithChildren
   '/auth': typeof AuthRoute
+  '/login': typeof LoginRoute
+  '/registro-iglesia': typeof RegistroIglesiaRoute
+  '/dashboard/asistencia': typeof DashboardAsistenciaRoute
+  '/dashboard/configuracion': typeof DashboardConfiguracionRoute
+  '/dashboard/eventos': typeof DashboardEventosRoute
+  '/dashboard/finanzas': typeof DashboardFinanzasRoute
+  '/dashboard/miembros': typeof DashboardMiembrosRoute
+  '/dashboard/ministerios': typeof DashboardMinisteriosRoute
+  '/dashboard/': typeof DashboardIndexRoute
   '/_authenticated/iglesias/$slug': typeof AuthenticatedIglesiasSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/auth' | '/iglesias/$slug'
+  fullPaths:
+    | '/'
+    | '/dashboard'
+    | '/auth'
+    | '/login'
+    | '/registro-iglesia'
+    | '/dashboard/asistencia'
+    | '/dashboard/configuracion'
+    | '/dashboard/eventos'
+    | '/dashboard/finanzas'
+    | '/dashboard/miembros'
+    | '/dashboard/ministerios'
+    | '/dashboard/'
+    | '/iglesias/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/auth' | '/iglesias/$slug'
+  to:
+    | '/'
+    | '/auth'
+    | '/login'
+    | '/registro-iglesia'
+    | '/dashboard/asistencia'
+    | '/dashboard/configuracion'
+    | '/dashboard/eventos'
+    | '/dashboard/finanzas'
+    | '/dashboard/miembros'
+    | '/dashboard/ministerios'
+    | '/dashboard'
+    | '/iglesias/$slug'
   id:
     | '__root__'
     | '/'
     | '/_authenticated'
+    | '/dashboard'
     | '/auth'
+    | '/login'
+    | '/registro-iglesia'
+    | '/dashboard/asistencia'
+    | '/dashboard/configuracion'
+    | '/dashboard/eventos'
+    | '/dashboard/finanzas'
+    | '/dashboard/miembros'
+    | '/dashboard/ministerios'
+    | '/dashboard/'
     | '/_authenticated/iglesias/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  DashboardRouteRoute: typeof DashboardRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
+  LoginRoute: typeof LoginRoute
+  RegistroIglesiaRoute: typeof RegistroIglesiaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -94,6 +221,76 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/registro-iglesia': {
+      id: '/registro-iglesia'
+      path: '/registro-iglesia'
+      fullPath: '/registro-iglesia'
+      preLoaderRoute: typeof RegistroIglesiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/': {
+      id: '/dashboard/'
+      path: '/'
+      fullPath: '/dashboard/'
+      preLoaderRoute: typeof DashboardIndexRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/dashboard/asistencia': {
+      id: '/dashboard/asistencia'
+      path: '/asistencia'
+      fullPath: '/dashboard/asistencia'
+      preLoaderRoute: typeof DashboardAsistenciaRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/dashboard/configuracion': {
+      id: '/dashboard/configuracion'
+      path: '/configuracion'
+      fullPath: '/dashboard/configuracion'
+      preLoaderRoute: typeof DashboardConfiguracionRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/dashboard/eventos': {
+      id: '/dashboard/eventos'
+      path: '/eventos'
+      fullPath: '/dashboard/eventos'
+      preLoaderRoute: typeof DashboardEventosRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/dashboard/finanzas': {
+      id: '/dashboard/finanzas'
+      path: '/finanzas'
+      fullPath: '/dashboard/finanzas'
+      preLoaderRoute: typeof DashboardFinanzasRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/dashboard/miembros': {
+      id: '/dashboard/miembros'
+      path: '/miembros'
+      fullPath: '/dashboard/miembros'
+      preLoaderRoute: typeof DashboardMiembrosRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/dashboard/ministerios': {
+      id: '/dashboard/ministerios'
+      path: '/ministerios'
+      fullPath: '/dashboard/ministerios'
+      preLoaderRoute: typeof DashboardMinisteriosRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
     '/_authenticated/iglesias/$slug': {
       id: '/_authenticated/iglesias/$slug'
       path: '/iglesias/$slug'
@@ -115,10 +312,37 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
 const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
+interface DashboardRouteRouteChildren {
+  DashboardAsistenciaRoute: typeof DashboardAsistenciaRoute
+  DashboardConfiguracionRoute: typeof DashboardConfiguracionRoute
+  DashboardEventosRoute: typeof DashboardEventosRoute
+  DashboardFinanzasRoute: typeof DashboardFinanzasRoute
+  DashboardMiembrosRoute: typeof DashboardMiembrosRoute
+  DashboardMinisteriosRoute: typeof DashboardMinisteriosRoute
+  DashboardIndexRoute: typeof DashboardIndexRoute
+}
+
+const DashboardRouteRouteChildren: DashboardRouteRouteChildren = {
+  DashboardAsistenciaRoute: DashboardAsistenciaRoute,
+  DashboardConfiguracionRoute: DashboardConfiguracionRoute,
+  DashboardEventosRoute: DashboardEventosRoute,
+  DashboardFinanzasRoute: DashboardFinanzasRoute,
+  DashboardMiembrosRoute: DashboardMiembrosRoute,
+  DashboardMinisteriosRoute: DashboardMinisteriosRoute,
+  DashboardIndexRoute: DashboardIndexRoute,
+}
+
+const DashboardRouteRouteWithChildren = DashboardRouteRoute._addFileChildren(
+  DashboardRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  DashboardRouteRoute: DashboardRouteRouteWithChildren,
   AuthRoute: AuthRoute,
+  LoginRoute: LoginRoute,
+  RegistroIglesiaRoute: RegistroIglesiaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
